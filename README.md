@@ -72,7 +72,6 @@ TCR data visualization graphs from Immunarch can be downloaded.
 
 ![sample_diversity](https://user-images.githubusercontent.com/41301333/120838751-1680bc80-c560-11eb-88ae-ecd871ad445e.png)
 
-## Flow chart
 
 ## References:
 
