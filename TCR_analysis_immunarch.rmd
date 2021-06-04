@@ -1,0 +1,41 @@
+library(immunarch)
+
+# Loading data
+
+data <- repLoad("Path/to/input/data/file")
+names(data$data) <- c("Donor_1","Donor_2")
+
+# Adding meta data
+
+data$meta$Sample <- names(data$data)
+data$meta$Type <- c("Healthy","Healthy")
+
+# Visualization graphs
+
+# Number of clones and distributions of clones 
+
+exp_vol <- repExplore(data$data, .method = "volume")
+
+# Relative abundance of clonotypes
+
+hom <- repClonality(data$data,
+  .method = "homeo",
+  .clone.types = c(Small = .0001, Medium = .001, Large = .01, Hyperexpanded = 1)
+)
+vis(hom) 
+
+# Diversity analysis
+
+div_chao <- repDiversity(data$data, "chao1")
+vis(div_chao)
+
+# Clonotype tracking
+
+target <- data$data[[1]] %>%
+  select(CDR3.aa, V.name) %>%
+  head(10)
+tc <- trackClonotypes(data$data, target)
+vis(tc,.plot = "line")
+
+## References:
+ImmunoMind Team. (2019). immunarch: An R Package for Painless Bioinformatics Analysis of T-Cell and B-Cell Immune Repertoires. Zenodo. http://doi.org/10.5281/zenodo.3367200
