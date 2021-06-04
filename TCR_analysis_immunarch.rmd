@@ -15,6 +15,8 @@ data$meta$Type <- c("Healthy","Healthy")
 # Number of clones and distributions of clones 
 
 exp_vol <- repExplore(data$data, .method = "volume")
+![Number_of_clonotypes](https://user-images.githubusercontent.com/74208394/120833905-3213a500-c517-11eb-8849-47bb537b4dcf.png)
+
 
 # Relative abundance of clonotypes
 
@@ -23,11 +25,14 @@ hom <- repClonality(data$data,
   .clone.types = c(Small = .0001, Medium = .001, Large = .01, Hyperexpanded = 1)
 )
 vis(hom) 
+![relative_abundance](https://user-images.githubusercontent.com/74208394/120833946-3cce3a00-c517-11eb-9026-3bb8044d0050.png)
 
 # Diversity analysis
 
 div_chao <- repDiversity(data$data, "chao1")
 vis(div_chao)
+
+![sample_diversity](https://user-images.githubusercontent.com/74208394/120834079-6a1ae800-c517-11eb-9174-b7b85c75092d.png)
 
 # Clonotype tracking
 
@@ -36,6 +41,7 @@ target <- data$data[[1]] %>%
   head(10)
 tc <- trackClonotypes(data$data, target)
 vis(tc,.plot = "line")
+![clonotype_tracking_line](https://user-images.githubusercontent.com/74208394/120834128-79019a80-c517-11eb-9c28-6e867a54bb07.png)
 
 ## References:
 ImmunoMind Team. (2019). immunarch: An R Package for Painless Bioinformatics Analysis of T-Cell and B-Cell Immune Repertoires. Zenodo. http://doi.org/10.5281/zenodo.3367200
