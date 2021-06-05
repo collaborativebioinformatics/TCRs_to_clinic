@@ -77,3 +77,5 @@ TCR data visualization graphs from Immunarch can be downloaded.
 
 ImmunoMind Team. (2019). immunarch: An R Package for Painless Bioinformatics Analysis of T-Cell and B-Cell Immune Repertoires. Zenodo. http://doi.org/10.5281/zenodo.3367200
 
+Samir, J., Rizzetto, S., Gupta, M. et al. Exploring and analysing single cell multi-omics data with VDJView. BMC Med Genomics 13, 29 (2020). https://doi.org/10.1186/s12920-020-0696-z
+
